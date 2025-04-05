@@ -1,7 +1,19 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "github": {
+    "enabled": true,
+    "silent": true,
+    "autoAlias": true,
+    "deployOnPush": true
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
 } 
