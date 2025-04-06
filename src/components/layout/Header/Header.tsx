@@ -1,30 +1,72 @@
 import React from 'react';
-import Button from '../../shared/Button';
+import './header.css';
+import ComputerIcon from '@mui/icons-material/Computer';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import EmailIcon from '@mui/icons-material/Email';
+
+const theme = createTheme({
+  components: {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: '2rem',
+        }
+      }
+    }
+  }
+});
 
 const Header: React.FC = () => {
   return (
     <header className="w-full bg-white border-b border-gray-200">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between w-full">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <div className="text-2xl font-bold text-primary-600">Your Logo</div>
-            <nav className="hidden md:flex items-center space-x-8">
-              <h1>Welcome to SR Software Institute</h1>
-              <h2>Success and Reponsable</h2>
-              <h3>We are a software development company that specializes in creating custom software solutions for businesses of all sizes.</h3>
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">Products</a>
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">Solutions</a>
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">Resources</a>
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">Pricing</a>
-            </nav>
+          <div className="flex flex-col md:flex-row items-center logoBody">
+          <div className="logo-container">
+            <div className="hexagon-wrapper">
+              <div className="hexagon">
+                <div className="hex-text">SR</div>
+              </div>
+            </div>
+            <div className="logo-text">
+              <div className="text-container">
+                <div className="line-1">SOFTWARE</div>
+                <div className="line-2">TRAINING INSTITUTE</div>
+              </div>
+              <ThemeProvider theme={theme}>
+                <ComputerIcon 
+                  sx={{ 
+                    position: 'relative',
+                    right: '46px',
+                    bottom: '10px',
+                    color: '#2295a2',
+                    zIndex: 1
+                  }} 
+                />
+              </ThemeProvider>
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button variant="primary" size="sm">
-              Sign Up
-            </Button>
+          </div>
+          <div className="flex self-center flex-col">
+            <div className='flex items-center'>
+          <PhoneInTalkIcon
+            sx={{ 
+              color: '#2295a2',
+              zIndex: 1
+            }} 
+          />
+          <p className="ml-1 m-0 font-mono text-black">+91 9030915131</p>
+          </div>
+          <div className='flex items-center'>
+            <EmailIcon 
+              sx={{ 
+                color: '#2295a2',
+                zIndex: 1
+              }} 
+            />
+          <p className="ml-1 m-0 font-mono text-black">srinstitute25@gmail.com</p>
+          </div>
           </div>
         </div>
       </div>

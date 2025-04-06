@@ -1,0 +1,155 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.hexagon-wrapper {
+  position: relative;
+  width: 100px;
+  height: 115px;
+}
+
+.hexagon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #4e6aff;
+  clip-path: polygon(50% 0%,
+      89% 20%,
+      87% 82%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hexagon::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: white;
+  clip-path: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
+  transform: scale(0.95);
+}
+
+.hexagon::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: #4e6aff;
+  clip-path: polygon(50% 0%, 89% 20%, 87% 82%, 50% 100%, 0% 75%, 0% 25%);
+  transform: scale(0.95);
+}
+
+.hexagon .inner-hexagon {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background: white;
+  clip-path: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
+  transform: scale(0.95);
+}
+
+.hexagon::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: white;
+  transform: translateX(1px);
+}
+
+.hex-text {
+  position: relative;
+  color: #4e6aff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 13rem;
+  color: #4e6aff;
+  margin-left: -40px;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: color 0.3s ease;
+}
+
+.text-container:hover,
+.logo-container:hover .text-container {
+  color: #2295a2 !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.text-container:hover + svg,
+.logo-container:hover svg {
+  color: #4e6aff !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .hexagon {
+  background: #2295a2;
+}
+
+.logo-container:hover .hex-text {
+  color: #2295a2;
+}
+
+.line-1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.line-2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.icon {
+  margin-left: 15px;
+}
+
+.icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: #00f9e0;
+  fill: none;
+  stroke-width: 2;
+}
