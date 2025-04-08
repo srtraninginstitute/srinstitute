@@ -6,6 +6,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
     sourcemap: true,
     minify: 'terser',
     cssMinify: true,
@@ -13,6 +19,9 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
   },
   preview: {
     port: 3000,
