@@ -61,7 +61,7 @@ const Carousel: React.FC = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     dotsClass: "slick-dots slick-thumb",
-    customPaging: (i: number) => (
+    customPaging: () => (
       <div className="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" />
     ),
   };
